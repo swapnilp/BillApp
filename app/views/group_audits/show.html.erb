@@ -1,0 +1,29 @@
+<div class="wrapper row2">
+  <div id="container" class="clear"> 
+    <!-- ####################################################################################################### -->
+    <div id="content">
+      <h1>Audits for <%= @group.name %> at <%= @group_audit.created_at %></h1>
+     <table>
+       <thead>
+	 <td>
+	   Email
+	 </td>
+	 <td>
+	   Amount
+	 </td>
+       </thead>
+       <%- @users.each do |user| %>
+         <tr>
+	   <td>
+	     <%= user.first[0] %>
+	   </td>
+	   <td>
+	     <%= user.first[1] %>
+	   </td>
+	 </tr>
+       <%- end %>
+     </table>
+
+    </div>
+  </div>
+</div>

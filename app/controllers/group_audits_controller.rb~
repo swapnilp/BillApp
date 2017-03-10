@@ -1,0 +1,13 @@
+class GroupAuditsController < ApplicationController
+
+  def index
+    @group  = current_user.groups.where(id: params[:group_id]).first
+    
+    if @group
+      
+    else
+      redirect_to "/groups"
+    end
+  end
+  
+end

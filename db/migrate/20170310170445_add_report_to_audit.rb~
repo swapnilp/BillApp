@@ -1,0 +1,4 @@
+class AddReportToAudit < ActiveRecord::Migration
+  def change
+  end
+end

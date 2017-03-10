@@ -46,6 +46,16 @@ class GroupsController < ApplicationController
       redirect_to groups_path
     end
   end
+
+  def make_audit
+    @group  = current_user.groups.where(id: params[:id]).last
+    if @group
+      @group.make_audit(current_user.id)
+      redirect_to "/groups/#{@group.id}"
+    else 
+      redirect_to groups_path
+    end
+  end
   
   def edit
   end

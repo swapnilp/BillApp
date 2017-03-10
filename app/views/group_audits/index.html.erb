@@ -1,0 +1,34 @@
+<div class="wrapper row2">
+  <div id="container" class="clear"> 
+    <!-- ####################################################################################################### -->
+    <div id="content">
+      <h1>Audits for <%= @group.name %></h1>
+      <table>
+	<thead>
+	  <td>
+	    Date
+	  </td>
+	  <td>
+	    User
+	  </td>
+	  <td>
+	    Action
+	  </td>
+	</thead>
+	<%- @group_audits.each do |ga| %>
+	<tr>
+	  <td>
+	    <%= ga.created_at %>
+	  </td>
+	  <td>
+	    <%= ga.user.name %>
+	  </td>
+	  <td>
+	    <a href="/groups/<%= ga.group_id %>/group_audits/<%= ga.id %>">Action</a>
+	  </td>
+	</tr>
+	<%- end %>
+      </table>
+    </div>
+  </div>
+</div>

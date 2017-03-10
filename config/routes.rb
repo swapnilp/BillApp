@@ -9,8 +9,10 @@ Rails.application.routes.draw do
     member do
       get 'members'
       post 'add_members'
+      get 'make_audit'
     end
     resources :group_transactions
+    resources :group_audits, only: [:index, :show]
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

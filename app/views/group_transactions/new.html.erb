@@ -21,7 +21,7 @@
       <div class="hide" id="transactionMembers">
 	<h2>Members</h2>
 	<%- @members.each do |member|%>
-	<p><input class="pointer" type="checkbox" id="puppy_gooddog" name="members[<%= member.id%>]" value="<%= member.id %>" />&nbsp;&nbsp;<%= member.user.name %></p>
+	<p><input class="pointer" type="checkbox" id="puppy_gooddog" name="members[<%= member.id%>]" value="<%= member.user_id %>" />&nbsp;&nbsp;<%= member.user.name %></p>
 	<%- end %>
       </div>
       <p>
