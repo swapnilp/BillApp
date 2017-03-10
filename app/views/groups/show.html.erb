@@ -1,0 +1,49 @@
+<div class="wrapper row2">
+  <div id="container" class="clear"> 
+    <!-- ####################################################################################################### -->
+    <div id="content">
+      <h1><%= @group.name %> Group</h1>
+      <div>
+	<h2>Members<small style="padding-left:20px;"><a href="/groups/<%= @group.id %>/members">Add Member</a></small></h2>
+	<ul>
+	  <%- @group.group_members.each do |member|%>
+	  
+	  <li>
+	    <%= member.user.name %>
+	    <strong>(<%= member.balance %> Balance)</strong>
+	  </li>
+	  <%- end %>
+	</ul>
+      </div>
+      <div>
+	<h2>Transactions<small style="padding-left:20px;"><a href="<%= new_group_group_transaction_path(@group)%>">New Transaction</a></small></h2>
+	<table>
+	  <tr>
+	    <th>
+	      Amount
+	    </th>
+	    <th>
+	      Reason
+	    </th>
+	    <th>
+	      Paid by
+	    </th>
+	    <th>
+	      Date
+	    </th>
+	  </tr>
+	  <%- @transactions.each do |trn| %>
+	  <tr>
+	    <td>
+	      <%= trn.amount %>
+	    </td>
+	    <td><%= trn.reason %></td>
+	    <td><%= trn.user.name %></td>
+	    <td><%= trn.created_at %></td>
+	  </tr>
+	  <%- end %>
+	</table>
+      </div>
+    </div>
+  </div>
+</div>

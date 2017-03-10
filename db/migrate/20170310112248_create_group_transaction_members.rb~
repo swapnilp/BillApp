@@ -1,0 +1,10 @@
+class CreateGroupTransactionMembers < ActiveRecord::Migration
+  def change
+    create_table :group_transaction_members do |t|
+      t.reference :group_transaction
+      t.reference :group_member
+      t.float :amount
+      t.timestamps null: false
+    end
+  end
+end

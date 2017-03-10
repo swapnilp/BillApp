@@ -1,0 +1,21 @@
+@charset "utf-8";
+/*
+Template Name: Business Plan
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+File: Homepage CSS
+*/
+
+#homepage, #services, #latest{display:block; width:100%;}
+
+#homepage #services{margin-bottom:50px;}
+#homepage #services .icon{float:left; margin:5px 10px 0 0;}
+#homepage #services p{margin:0; padding:0;}
+
+#homepage #shout{height:95px; margin-bottom:50px; padding:15px 50px 0; font-size:22px; font-style:italic; line-height:1.8em; text-align:center; background:url("images/shout_bg.gif") top center no-repeat;}
+#homepage #shout p{margin:0; padding:0;}
+
+#homepage #latest{}
+#homepage #latest .imgl{margin:5px 20px 0 0; padding:9px;}

@@ -1,0 +1,24 @@
+<div class="wrapper row2">
+  <div id="container" class="clear"> 
+    <!-- ####################################################################################################### -->
+    <div id="content">
+      <h1>New Group Transaction</h1>
+      
+      <%= form_for @group_transaction, url: {action: "create"} do |f| %>
+      <p>
+	<strong class="one_quarter">Name</strong>
+	<%= f.text_field :amount %>
+      </p>
+      <p>
+	<strong class="one_quarter">Reason</strong>
+	<%= f.text_field :reason %>
+      </p>
+      <p>
+	<%= f.submit "Create" %>
+	<a href="/groups/<%= @group.id %>"class="btn btn primary"> Cancel</a>
+      </p>
+      <% end %>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,23 @@
+<div class="wrapper row2">
+  <div id="container" class="clear"> 
+    <!-- ####################################################################################################### -->
+    <div id="content">
+      <h1>New Group</h1>
+      
+      <%= form_for @group, url: {action: "create"} do |f| %>
+      <p>
+	<strong class="one_quarter">Name</strong>
+	<%= f.text_field :name %>
+      </p>
+      <p>
+	<strong class="one_quarter">Reason</strong>
+	<%= f.text_field :reason %>
+      </p>
+      <p>
+	<%= f.submit "Create" %>
+      </p>
+      <% end %>
+    </div>
+  </div>
+</div>
+

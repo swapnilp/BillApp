@@ -1,0 +1,15 @@
+@charset "utf-8";
+/*
+Template Name: Business Plan
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+File: Gallery CSS
+*/
+
+#gallery{display:block; width:100%; line-height:1.6em;}
+#gallery ul, #gallery img{margin:0; padding:0; list-style:none;}
+#gallery li{display:block; float:left; width:300px; margin:0 30px 30px 0; padding:0;}
+#gallery li.last{margin-right:0;}
+#gallery li img{display:block; width:300px; height:280px;}

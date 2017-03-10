@@ -1,0 +1,39 @@
+<div class="wrapper row2">
+  <div id="container" class="clear"> 
+    <!-- ####################################################################################################### -->
+    <div id="content">
+      <h1>Add member into <%= @group.name %></h1>
+      <%= form_tag("/groups/#{@group.id}/add_members") do %>
+      <table>
+	<thead>
+	  <tr>
+	    <td>
+	      Select
+	    </td>
+	    <td>
+	      Name
+	    </td>
+	    <td>
+	      Mobile
+	    </td>
+	  </tr>
+	  <%- @users.each do |user| %>
+	  <tr>
+	    <td>
+	      <input class="pointer" type="checkbox" name="group_member[<%= user.id %>]" value="<%= user.id %>">
+	    </td>
+	    <td>
+	      <%= user.name %>
+	    </td>
+	    <td>
+	      <%= user.mobile %>
+	    </td>
+	  </tr>
+	  <%- end %>
+	</thead>
+      </table>
+      <%= submit_tag "Save" %>
+      <% end %>
+    </div>
+  </div>
+</div>

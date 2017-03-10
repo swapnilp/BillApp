@@ -1,0 +1,22 @@
+<div class="wrapper row5">
+  <div id="pageintro" class="clear">
+    <p class="pageheader">Groups <small><a href="<%= new_group_path %>">New Group</a></small></p>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper row2">
+  <div id="container" class="clear"> 
+    <!-- ####################################################################################################### -->
+    <div id="portfolio">
+      <ul class="clear">
+	<%- @groups.each do |group| %>
+        <li><a href="/groups/<%= group.id %>"><img src="../images/demo/300x280.gif" alt="" /></a>
+          <p class="project_name"><%= group.name%></p>
+          <p><%= group.reason %></p>
+        </li>
+	<%- end %>
+        
+      </ul>
+    </div>
+  </div>
+</div>

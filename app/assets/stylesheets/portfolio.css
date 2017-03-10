@@ -1,0 +1,16 @@
+@charset "utf-8";
+/*
+Template Name: Business Plan
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+File: Portfolio CSS
+*/
+
+#portfolio{display:block; width:100%; line-height:1.6em;}
+#portfolio ul, #portfolio p, #portfolio img{margin:0; padding:0; list-style:none;}
+#portfolio li{display:block; float:left; width:300px; margin:0 30px 40px 0; padding:0;}
+#portfolio li.last{margin-right:0;}
+#portfolio li img{display:block; width:300px; height:280px; margin-bottom:20px;}
+#portfolio .project_name{margin:0 0 10px 0; font-size:20px;}
