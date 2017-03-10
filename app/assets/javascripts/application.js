@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+var  showMembers = function (){
+  if($("#group_transaction_all_group").prop('checked')){
+    $("#transactionMembers").addClass('hide');
+  }else{
+    $("#transactionMembers").removeClass('hide');
+
+  }
+};
