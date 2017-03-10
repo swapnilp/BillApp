@@ -2,7 +2,11 @@
   <div id="container" class="clear"> 
     <!-- ####################################################################################################### -->
     <div id="content">
+      <a style="float:right;font-size:20px;" href="/groups/<%= @group.id %>/make_audit">
+	Make audit
+      </a>
       <h1><%= @group.name %> Group</h1>
+
       <div>
 	<h2>Members<small style="padding-left:20px;"><a href="/groups/<%= @group.id %>/members">Add Member</a></small></h2>
 	<ul>

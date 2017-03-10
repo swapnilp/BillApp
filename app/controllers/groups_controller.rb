@@ -17,7 +17,8 @@ class GroupsController < ApplicationController
   def create
     @group  = current_user.groups.new(create_params)
     if @group.save
-      redirect_to groups_path(@group)
+      
+      redirect_to "groups_path/#{@group.id}"
     else
       render :new
     end
@@ -26,8 +27,7 @@ class GroupsController < ApplicationController
   def members
     @group  = current_user.groups.where(id: params[:id]).last
     if @group
-      @users = User.where("id not in (?)", @group.group_members.map(&:user_id))
-      
+      @users = User.where("id not in (?)", @group.group_members.map(&:user_id) << 0)
     else 
       redirect_to groups_path
     end

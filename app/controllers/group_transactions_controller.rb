@@ -16,7 +16,7 @@ class GroupTransactionsController < ApplicationController
     @group  = current_user.groups.where(id: params[:group_id]).first
     
     if @group
-      @group_transaction = @group.group_transactions.new(create_params)
+      @group_transaction = @group.group_transactions.new(create_params.merge({user_id: current_user.id}))
       if @group_transaction.save 
         redirect_to "/groups/#{@group.id}"
       else
