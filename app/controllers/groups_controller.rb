@@ -36,7 +36,9 @@ class GroupsController < ApplicationController
   def add_members
     @group  = current_user.groups.where(id: params[:id]).last
     if @group
-      @group.add_members(params[:group_member].values.map(&:to_i))
+      if params[:group_member].present?
+        @group.add_members(params[:group_member].values.map(&:to_i))
+      end
       
       #@users = User.where("id not in (?)", @group.group_members.map(&:user_id))
       redirect_to "/groups/#{@group.id}"
