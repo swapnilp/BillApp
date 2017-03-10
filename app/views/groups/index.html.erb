@@ -15,6 +15,10 @@
           <p><%= group.reason %></p>
         </li>
 	<%- end %>
+	<%- if @groups.size == 0%>
+	<h1 class="red_group">Please Create Your Group and add Member</h1>
+	<a href="<%= new_group_path %>" style="font-size:14px;">New Group</a>
+	<%- end %>
         
       </ul>
     </div>

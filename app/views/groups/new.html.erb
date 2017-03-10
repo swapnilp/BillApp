@@ -5,6 +5,13 @@
       <h1>New Group</h1>
       
       <%= form_for @group, url: {action: "create"} do |f| %>
+      <% if @group.errors.any? %>
+      <ul>
+	<% @group.errors.full_messages.each do |msg| %>
+	<li><%= msg %></li>
+	<% end %>
+      </ul>
+      <% end %>
       <p>
 	<strong class="one_quarter">Name</strong>
 	<%= f.text_field :name %>

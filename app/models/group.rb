@@ -1,7 +1,10 @@
 class Group < ActiveRecord::Base
   has_many :group_members
   has_many :group_transactions
+  has_many :group_audits
 
+  validates :name, uniqueness: { scope: :user_id,
+    message: "should happen once per user" }
 
   after_create :add_admin
 
