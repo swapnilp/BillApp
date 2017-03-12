@@ -20,7 +20,7 @@ class GroupTransactionsController < ApplicationController
       @group_transaction = @group.group_transactions.new(create_params.merge({user_id: current_user.id}))
       if @group_transaction.save 
         unless @group_transaction.all_group 
-          @group_transaction.add_members(params[:members].values.map(&:to_i)) if params[:members].present?
+          @group_transaction.add_members(params[:members]) if params[:members].present?
         end
         redirect_to "/groups/#{@group.id}"
       else

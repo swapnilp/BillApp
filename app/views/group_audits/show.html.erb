@@ -3,17 +3,17 @@
     <!-- ####################################################################################################### -->
     <div id="content">
       <h1>Audits for <%= @group.name %> at <%= @group_audit.created_at %></h1>
-     <table>
-       <thead>
-	 <td>
-	   Email
-	 </td>
-	 <td>
-	   Amount
-	 </td>
-       </thead>
-       <%- @users.each do |user| %>
-         <tr>
+      <table>
+	<thead>
+	  <td>
+	    Email
+	  </td>
+	  <td>
+	    Amount
+	  </td>
+	</thead>
+	<%- @users.each do |user| %>
+        <tr>
 	   <td>
 	     <%= user.first[0] %>
 	   </td>
@@ -21,9 +21,41 @@
 	     <%= user.first[1] %>
 	   </td>
 	 </tr>
-       <%- end %>
-     </table>
-
+	<%- end %>
+      </table>
+      <h1>Transactions</h1>
+      <table>
+	  <tr>
+	    <th>
+	      Amount
+	    </th>
+	    <th>
+	      Reason
+	    </th>
+	    <th>
+	      Paid by
+	    </th>
+	    
+	    <th>All Group</th>
+	    <th>Number of members</th>
+	    <th>
+	      Date
+	    </th>
+	      
+	  </tr>
+	  <%- @transaction.each do |trn| %>
+	  <tr>
+	    <td>
+	      <%= trn.amount %>
+	    </td>
+	    <td><%= trn.reason %></td>
+	    <td><%= trn.user.name %></td>
+	    <td><%= trn.all_group %></td>
+	    <td><%= trn.all_group ? 'All Group' : trn.group_transaction_members_count %></td>
+	    <td><%= trn.created_at %></td>
+	  </tr>
+	  <%- end %>
+	</table>
     </div>
   </div>
 </div>

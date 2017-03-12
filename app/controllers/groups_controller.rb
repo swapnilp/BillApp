@@ -7,7 +7,12 @@ class GroupsController < ApplicationController
 
   def show
     @group  = current_user.groups.where(id: params[:id]).first
+    last_audit = @group.group_audits.last
     @transactions = @group.group_transactions
+    if last_audit.present?
+      @transactions = @transactions.where("created_at > ?", last_audit.created_at)
+    end
+
   end
   
   def  new

@@ -2,13 +2,17 @@
   <div id="container" class="clear"> 
     <!-- ####################################################################################################### -->
     <div id="content">
+      <%- if @transactions.count > 0 %>
       <a style="float:right;font-size:20px;" href="/groups/<%= @group.id %>/make_audit">
 	Make audit
       </a>
+      <%- end %>
       &nbsp;&nbsp;&nbsp;&nbsp;
+      
       <a style="float:right;font-size:20px;margin-right:20px;" href="/groups/<%= @group.id %>/group_audits">
 	Audits Reports
       </a>
+
       
       <h1><%= @group.name %> Group</h1>
 

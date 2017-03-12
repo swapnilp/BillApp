@@ -39,9 +39,9 @@ class Group < ActiveRecord::Base
           end
         end
       else
-        if gt.group_transaction_members_count > 0
-          amount = gt.amount / (gt.group_transaction_members_count + 1)
-          my_amt = (gt.amount / (gt.group_transaction_members_count + 1)) * gt.group_transaction_members_count
+        if gt.group_transaction_members_count > 1
+          amount = gt.amount / (gt.group_transaction_members_count)
+          my_amt = (gt.amount / (gt.group_transaction_members_count)) * (gt.group_transaction_members_count - 1)
           gt.group_transaction_members.each do |gtm|
             if gtm.user_id == gt.user_id
               members[gtm.user_id] = members[gtm.user_id] + my_amt
@@ -49,6 +49,8 @@ class Group < ActiveRecord::Base
               members[gtm.user_id] = members[gtm.user_id] - amount
             end
           end
+        else
+          members[gt.user_id] = members[gt.user_id] + gt.amount 
         end
       end
       
